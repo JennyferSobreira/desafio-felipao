@@ -1,25 +1,23 @@
-def calcular_nivel(vitorias, derrotas):
-    saldo_vitorias = vitorias - derrotas
-    nivel = ""
+nome = input("Digite o nome do herói: ")
+xp = int(input("Digite a experiência (XP) do herói: "))
 
-    if vitorias < 10:
-        nivel = "Ferro"
-    elif vitorias >= 10 and vitorias <= 20:
-        nivel = "Bronze"
-    elif vitorias >= 21 and vitorias <= 50:
-        nivel = "Prata"
-    elif vitorias >= 51 and vitorias <= 80:
-        nivel = "Ouro"
-    elif vitorias >= 81 and vitorias <= 90:
-        nivel = "Diamante"
-    elif vitorias >= 91 and vitorias <= 100:
-        nivel = "Lendário"
-    elif vitorias >= 101:
-        nivel = "Imortal"
+nivel = ""
 
-    return f"O Herói tem de saldo de {saldo_vitorias} está no nível de {nivel}"
+if xp < 1000:
+    nivel = "Ferro"
+elif 1001 <= xp <= 2000:
+    nivel = "Bronze"
+elif 2001 <= xp <= 5000:
+    nivel = "Prata"
+elif 5001 <= xp <= 7000:
+    nivel = "Ouro"
+elif 7001 <= xp <= 8000:
+    nivel = "Platina"
+elif 8001 <= xp <= 9000:
+    nivel = "Ascendente"
+elif 9001 <= xp <= 10000:
+    nivel = "Imortal"
+elif xp >= 10001:
+    nivel = "Radiante"
 
-vitorias = int(input("Digite o número de vitórias: "))
-derrotas = int(input("Digite o número de derrotas: "))
-
-print(calcular_nivel(vitorias, derrotas))
+print(f"O Herói de nome {nome} está no nível de {nivel}")
